@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Book</title>
+</head>
+<body>
+  <h1>Edit Book</h1>
+  <form action="/books/<%= book._id %>" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" value="<%= book.title %>" required>
+    <label for="author">Author:</label>
+    <input type="text" name="author" id="author" value="<%= book.author %>" required>
+    <label for="genre">Genre:</label>
+    <input type="text" name="genre" id="genre" value="<%= book.genre %>">
+    <label for="status">Status:</label>
+    <select name="status" id="status">
+      <option value="to-read" <%= book.status === 'to-read' ? 'selected' : '' %>>To Read</option>
+      <option value="reading" <%= book.status === 'reading' ? 'selected' : '' %>>Reading</option>
+      <option value="finished" <%= book.status === 'finished' ? 'selected' : '' %>>Finished</option>
+    </select>
+    <label for="rating">Rating:</label>
+    <input type="number" name="rating" id="rating" value="<%= book.rating %>" min="1" max="5">
+    <button type="submit">Update Book</button>
+  </form>
+</body>
+</html>

@@ -35,6 +35,7 @@ app.set('view engine', 'ejs');
 
 // User Model
 const User = require('./models/User');
+const Book = require('./models/Book');
 
 // Routes
 app.get('/', (req, res) => {
@@ -84,6 +85,53 @@ app.get('/logout', (req, res) => {
     res.clearCookie('connect.sid');
     res.redirect('/');
   });
+});
+
+//Book routes
+function isAuthenticated(req, res, next) {
+  if (req.session.userId) {
+    return next();
+  } else {
+    res.redirect('/login');
+  }
+}
+
+// Apply the middleware to routes that require authentication
+app.get('/books/new', isAuthenticated, (req, res) => {
+  res.render('newBook');
+});
+
+app.post('/books', isAuthenticated, async (req, res) => {
+  const { title, author, genre, status, rating } = req.body;
+  const newBook = new Book({ title, author, genre, status, rating, userId: req.session.userId });
+  try {
+    await newBook.save();
+    res.redirect('/books');
+  } catch (error) {
+    console.error('Error adding book:', error);
+    res.redirect('/books/new');
+  }
+});
+
+app.get('/books', isAuthenticated, async (req, res) => {
+  const books = await Book.find({ userId: req.session.userId });
+  res.render('books', { books });
+});
+
+app.get('/books/:id/edit', isAuthenticated, async (req, res) => {
+  const book = await Book.findById(req.params.id);
+  res.render('editBook', { book });
+});
+
+app.post('/books/:id', isAuthenticated, async (req, res) => {
+  const { title, author, genre, status, rating } = req.body;
+  await Book.findByIdAndUpdate(req.params.id, { title, author, genre, status, rating });
+  res.redirect('/books');
+});
+
+app.post('/books/:id/delete', isAuthenticated, async (req, res) => {
+  await Book.findByIdAndDelete(req.params.id);
+  res.redirect('/books');
 });
 
 // Start the server
