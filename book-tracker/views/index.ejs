@@ -12,8 +12,6 @@
   </header>
   <nav>
     <a href="/">Home</a>
-    <a href="/books">My Books</a>
-    <a href="/books/new">Add New Book</a>
     <% if (typeof user !== 'undefined') { %>
       <a href="/logout">Logout</a>
     <% } else { %>
@@ -23,6 +21,8 @@
   </nav>
   <main>
     <h1>Welcome to the Book Tracker App</h1>
+    <a href="/books/new">Add New Book</a>
+    <a href="/books">My Books</a>
   </main>
   <footer>
     <p>&copy; 2024 Book Tracker</p>

@@ -12,8 +12,6 @@
   </header>
   <nav>
     <a href="/">Home</a>
-
-    <a href="/books/new">Add New Book</a>
     <% if (typeof user !== 'undefined') { %>
       <a href="/logout">Logout</a>
     <% } else { %>
@@ -27,15 +25,15 @@
       <% books.forEach(book => { %>
         <li>
           <strong><%= book.title %></strong> by <%= book.author %> - <%= book.status %>
-          <a href="/books/<%= book._id %>/edit">Edit</a>
-          <form action="/books/<%= book._id %>/delete" method="POST" style="display:inline;">
-            <button type="submit">Delete</button>
-          </form>
+          <div>
+            <a href="/books/<%= book._id %>/edit">Edit</a>
+            <form action="/books/<%= book._id %>/delete" method="POST" style="display:inline;">
+              <button type="submit">Delete</button>
+            </form>
+          </div>
         </li>
       <% }) %>
     </ul>
-    <a href="/books/new">Add New Book</a>
-    <a href="/books">My Books</a>
   </main>
   <footer>
     <p>&copy; 2024 Book Tracker</p>
