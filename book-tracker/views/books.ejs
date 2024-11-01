@@ -19,9 +19,10 @@
       <a href="/signup">Sign Up</a>
     <% } %>
   </nav>
+  <ul>
   <main>
     <h1>My Books</h1>
-    <ul>
+    <div>
       <% books.forEach(book => { %>
         <li>
           <strong><%= book.title %></strong> by <%= book.author %> - <%= book.status %>
@@ -35,6 +36,7 @@
       <% }) %>
     </ul>
   </main>
+</div>
   <footer>
     <p>&copy; 2024 Book Tracker</p>
   </footer>
