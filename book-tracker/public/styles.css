@@ -1,27 +1,28 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('z-small.jpg');
+    background-image: url('s-small.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: #2c3e50;
     margin: 0;
     padding: 0;
-    height: 600px;
+    height: 100vh;
 }
   
   header {
-    background-color: #3498db;
+    background-color: #00171F;
     color: white;
     padding: 1rem;
     text-align: center;
   }
   
   nav {
-    background-color: #2ecc71;
+    background-color: #064469;
     padding: 1rem;
     text-align: center;
+    opacity: 0.5;
   }
   
   nav a {
@@ -29,7 +30,6 @@ body {
     margin: 0 1rem;
     text-decoration: none;
     font-size: 12px;
-   
   }
   
   main {
@@ -42,6 +42,7 @@ body {
   }
 
   main a {
+    color: white;
     font-size: 1rem;
     width: 100%;
     margin: 1rem;
@@ -49,11 +50,10 @@ body {
     justify-content: center;
     width: 100px;
     text-transform: uppercase;
-   
   }
   
   footer {
-    background-color: #3498db;
+    background-color: #00171F;
     color: white;
     text-align: center;
     padding: 1rem;
@@ -63,8 +63,8 @@ body {
   }
 
   h1 {
-    color: black;
-    font-size: 1.2rem;
+    color: orange;
+    font-size: 1.5rem;
     text-align: center;
     margin-bottom: 1rem;
   }
@@ -141,6 +141,29 @@ body {
   a:hover {
     text-decoration: underline;
   }
+
+  @media (max-width: 600px) {
+    a {
+        font-size: 0.8rem;
+        margin: 0.5rem;
+    }
+}
+
+/* Media query for medium screens */
+@media (min-width: 601px) and (max-width: 1024px) {
+    a {
+        font-size: 1rem;
+        margin: 1rem;
+    }
+}
+
+/* Media query for large screens */
+@media (min-width: 1025px) {
+    a {
+        font-size: 1.2rem;
+        margin: 1.5rem;
+    }
+}
   
   label {
     display: block;
@@ -164,6 +187,7 @@ body {
     border-radius: 5px;
     font-size: 1rem;
     width: 100%;
+    font-weight: 600;
   }
   
   button:hover {
