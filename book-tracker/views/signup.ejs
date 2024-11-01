@@ -4,15 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <h1>Sign Up</h1>
-  <form action="/signup" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required>
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required>
-    <button type="submit">Sign Up</button>
-  </form>
+  <header>
+    <h1>Book Tracker</h1>
+  </header>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/books">My Books</a>
+    <a href="/books/new">Add New Book</a>
+    <% if (typeof user !== 'undefined') { %>
+      <a href="/logout">Logout</a>
+    <% } else { %>
+      <a href="/login">Login</a>
+      <a href="/signup">Sign Up</a>
+    <% } %>
+  </nav>
+  <main class="centered-container">
+    <form action="/signup" method="POST">
+      <h1>Begin your journey with an access to over 40+ million books in various Genires with an easy and simple monthly subscription and read anywhere, any devices. First month will be free.</h1>
+      <h2>Login Form</h2>
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" required>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2024 Book Tracker</p>
+  </footer>
 </body>
 </html>

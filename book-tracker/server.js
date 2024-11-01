@@ -38,6 +38,22 @@ const User = require('./models/User');
 const Book = require('./models/Book');
 
 // Routes
+
+// Middleware to check if user is the owner of the book
+async function checkBookOwnership(req, res, next) {
+  try {
+    const book = await Book.findById(req.params.id);
+    if (book.userId.equals(req.session.userId)) {
+      return next();
+    } else {
+      res.redirect('/books');
+    }
+  } catch (error) {
+    console.error('Error checking book ownership:', error);
+    res.redirect('/books');
+  }
+}
+
 app.get('/', (req, res) => {
   res.render('index');
 });
@@ -71,11 +87,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// Log Out Route
-/*app.get('/logout', (req, res) => {
-  req.session.destroy();
-  res.redirect('/');
-});*/
+
 
 app.get('/logout', (req, res) => {
   req.session.destroy((err) => {
@@ -118,21 +130,25 @@ app.get('/books', isAuthenticated, async (req, res) => {
   res.render('books', { books });
 });
 
-app.get('/books/:id/edit', isAuthenticated, async (req, res) => {
+//edit book
+app.get('/books/:id/edit', isAuthenticated, checkBookOwnership, async (req, res) => {
   const book = await Book.findById(req.params.id);
   res.render('editBook', { book });
 });
 
-app.post('/books/:id', isAuthenticated, async (req, res) => {
+app.post('/books/:id', isAuthenticated, checkBookOwnership, async (req, res) => {
   const { title, author, genre, status, rating } = req.body;
   await Book.findByIdAndUpdate(req.params.id, { title, author, genre, status, rating });
   res.redirect('/books');
 });
 
-app.post('/books/:id/delete', isAuthenticated, async (req, res) => {
+// delete Book 
+app.post('/books/:id/delete', isAuthenticated, checkBookOwnership, async (req, res) => {
   await Book.findByIdAndDelete(req.params.id);
   res.redirect('/books');
 });
+
+
 
 // Start the server
 const PORT = process.env.PORT || 3000;
