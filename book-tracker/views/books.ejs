@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <h1>Book Tracker</h1>
+    <img src="yop.png" alt="Logo" style="height: 50px;">
   </header>
   <nav>
     <a href="/">Home</a>
@@ -19,24 +19,24 @@
       <a href="/signup">Sign Up</a>
     <% } %>
   </nav>
-  <ul>
+  
   <main>
     <h1>My Books</h1>
-    <div>
+    <ul>
       <% books.forEach(book => { %>
         <li>
           <strong><%= book.title %></strong> by <%= book.author %> - <%= book.status %>
-          <div>
+          
             <a href="/books/<%= book._id %>/edit">Edit</a>
             <form action="/books/<%= book._id %>/delete" method="POST" style="display:inline;">
               <button type="submit">Delete</button>
             </form>
-          </div>
+          
         </li>
       <% }) %>
     </ul>
   </main>
-</div>
+  
   <footer>
     <p>&copy; 2024 Book Tracker</p>
   </footer>

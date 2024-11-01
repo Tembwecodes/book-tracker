@@ -17,6 +17,12 @@ body {
     padding: 1rem;
     text-align: center;
   }
+
+  header img {
+    height: 50px; /* Adjust the height as needed */
+    margin-right: 10px; /* Space between the logo and the title */
+    vertical-align: middle; /* Align the logo with the text */
+}
   
   nav {
     background-color: #064469;
@@ -29,7 +35,7 @@ body {
     color: white;
     margin: 0 1rem;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 15px;
   }
   
   main {
@@ -40,6 +46,7 @@ body {
     flex-direction: column;
     height: 500px;
   }
+
 
   main a {
     color: white;
@@ -64,16 +71,26 @@ body {
 
   h1 {
     color: orange;
-    font-size: 1.5rem;
+    font-size: 1.rem;
     text-align: center;
     margin-bottom: 1rem;
   }
   
   h2 {
+    font-family: 'Caveat', cursive;
     color: white;
-    font-size: 2rem;
+    font-size: 5rem;
     text-align: center;
     margin-bottom: 1rem;
+  }
+
+  h4 {
+    font-family: 'Caveat', cursive;
+    color: gray;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: -6.1rem;
+    font-size: 1em;
   }
   
   form {
@@ -84,63 +101,42 @@ body {
     width: 100%;
     max-width: 400px;
   }
-  
-  .book-list {
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  ul {
+  main h1 {
+    font-size: 2em;
+    margin-top: 30px;
+}
+
+main ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  li {
-    background-color: white;
-    margin: 1rem 0;
-    padding: 1rem;
+}
+main li {
+    background-color: #ecf0f1;
+    margin: 10px 0;
+    padding: 15px;
+    width: 800px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  li strong {
-    font-size: 1.2rem;
-  }
-  
-  li a {
-    color: #3498db;
-    margin-right: 1rem;
-  }
-  
-  li form {
-    display: inline;
-  }
-  
-  li button {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  li button:hover {
-    background-color: #c0392b;
-  }
+}
+main li strong {
+    font-size: 1.5em;
+}
 
-  a {
+main li a {
+    margin-right: 10px;
+    text-decoration: none;
     color: #3498db;
-  }
-  
-  a:hover {
+}
+
+main li a:hover {
     text-decoration: underline;
-  }
+}
+
+main li form {
+    display: inline;
+}
 
   @media (max-width: 600px) {
     a {
