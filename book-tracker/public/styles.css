@@ -74,15 +74,15 @@ body {
     color: #0F0C0A;
     font-size: 1.rem;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
   }
   
   h2 {
     font-family: 'Caveat', cursive;
     color: white;
-    font-size: 5rem;
+    font-size: 5.5rem;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem;
   }
 
   h4 {
@@ -142,13 +142,14 @@ main li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 4px;
 }
 main li strong {
     font-size: 1.5em;
 }
 
 main li a {
-    margin-right: 10px;
+    margin-right: 2px;
     text-decoration: none;
     color: #0F0C0A;
 }
@@ -157,9 +158,31 @@ main li a:hover {
     text-decoration: underline;
 }
 
-main li form {
-    display: inline;
-}
+label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .social-icons {
+    margin-top: 5px;
+  }
+  .social-icons a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 24px;
+  }
+  .social-icons a:hover {
+    color: #007bff;
+  }
 
   @media (max-width: 600px) {
     a {
@@ -184,16 +207,5 @@ main li form {
     }
 }
   
-  label {
-    display: block;
-    margin: 1rem 0 0.5rem;
-  }
-  
-  input, select {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+
   
