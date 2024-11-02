@@ -1,7 +1,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('s-small.jpg');
+    background-image: url('f-small.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -12,21 +12,21 @@ body {
 }
   
   header {
-    background-color: #00171F;
+    background-color: white;
     color: white;
     padding: 1rem;
     text-align: center;
   }
 
   header img {
-    height: 50px; /* Adjust the height as needed */
-    margin-right: 10px; /* Space between the logo and the title */
-    vertical-align: middle; /* Align the logo with the text */
+    height: 50px; 
+    margin-right: 10px; 
+    vertical-align: middle; 
 }
   
   nav {
-    background-color: #064469;
-    padding: 1rem;
+    background-color: #914D21;
+    padding: 2rem;
     text-align: center;
     opacity: 0.5;
   }
@@ -44,7 +44,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 500px;
+    height: 450px;
   }
 
 
@@ -60,17 +60,18 @@ body {
   }
   
   footer {
-    background-color: #00171F;
-    color: white;
+    background-color: white;
+    color: black;
     text-align: center;
     padding: 1rem;
     position: fixed;
     bottom: 0;
     width: 100%;
+    font-size: 13px;
   }
 
   h1 {
-    color: orange;
+    color: #0F0C0A;
     font-size: 1.rem;
     text-align: center;
     margin-bottom: 1rem;
@@ -101,6 +102,28 @@ body {
     width: 100%;
     max-width: 400px;
   }
+
+  form {
+    display: inline;
+}
+
+button {
+    background-color: #914D21;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.75rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    font-weight: 600;
+  }
+  
+  button:hover {
+    background-color: #BE8450;
+  }
+
+
   main h1 {
     font-size: 2em;
     margin-top: 30px;
@@ -127,7 +150,7 @@ main li strong {
 main li a {
     margin-right: 10px;
     text-decoration: none;
-    color: #3498db;
+    color: #0F0C0A;
 }
 
 main li a:hover {
@@ -174,18 +197,3 @@ main li form {
     border-radius: 5px;
   }
   
-  button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 0.75rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    width: 100%;
-    font-weight: 600;
-  }
-  
-  button:hover {
-    background-color: #2980b9;
-  }
